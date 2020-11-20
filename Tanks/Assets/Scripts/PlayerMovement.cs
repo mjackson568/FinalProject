@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float xAngle, yAngle, zAngle;
-    private Player Tank;
+    public GameObject Tank;
     // Start is called before the first frame update
     void Start()
     {
