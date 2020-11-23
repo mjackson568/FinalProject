@@ -446,8 +446,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3775e2a01b675524db190ca0e8367d93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xAngle: 0
-  yAngle: 100
+  xAngle: 360
+  yAngle: 0
   zAngle: 0
   Tank: {fileID: 685670302}
 --- !u!1 &1267176325
