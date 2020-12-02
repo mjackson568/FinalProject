@@ -6,20 +6,10 @@ public class PlayerMovement : MonoBehaviour
 {
     public float movespeed = 3.0f;
     public float rotationSpeed = 90.0f;
-    //public float xAngle, yAngle, zAngle;
-    //public GameObject Tank;
-     //Start is called before the first frame update
+
     void Start()
     {
-        //Updated upstream
-        //Tank.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
-        //xAngle = 0.0f;
-        //yAngle = 0.5f;
-       // zAngle = 0.0f;
-
-       // Tank.transform.position = new Vector3(0.5f, 0f, 0f);
-        //xAngle = 0.5f;
-        //Stashed changes
+        
     }
 
     // Update is called once per frame
@@ -30,7 +20,6 @@ public class PlayerMovement : MonoBehaviour
 
         GetComponent<Rigidbody>().velocity = transform.forward * movespeed * moveTank;
 
-        transform.Rotate(Vector3.up * rotationSpeed * rotateTank * Time.deltaTime);
-        //Tank.transform.Rotate(xAngle, yAngle, zAngle);
+        transform.Rotate(Vector3.up * rotationSpeed * rotateTank * Time.deltaTime);       
     }
 }
