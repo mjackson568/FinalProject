@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float movespeed = 3.0f;
     public float rotationSpeed = 90.0f;
+    public Rigidbody body;
 
     void Start()
     {
@@ -18,8 +19,7 @@ public class PlayerMovement : MonoBehaviour
         float rotateTank = Input.GetAxis("Horizontal");
         float moveTank = Input.GetAxis("Vertical");
 
-        GetComponent<Rigidbody>().velocity = transform.forward * movespeed * moveTank;
-
-        transform.Rotate(Vector3.up * rotationSpeed * rotateTank * Time.deltaTime);       
+        GetComponent<Rigidbody>().velocity = transform.forward * movespeed * moveTank;       
+        transform.Rotate(Vector3.up * rotationSpeed * rotateTank * Time.deltaTime);
     }
 }
