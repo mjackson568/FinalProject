@@ -21,5 +21,16 @@ public class PlayerMovement : MonoBehaviour
 
         GetComponent<Rigidbody>().velocity = transform.forward * movespeed * moveTank;       
         transform.Rotate(Vector3.up * rotationSpeed * rotateTank * Time.deltaTime);
+
+
+        void OnTriggerEnter(Collider collider)
+        {
+            if (collider.gameObject.tag == "Mine")
+            {
+                Debug.Log("Mine is found.");
+                Destroy(gameObject);
+                
+            }
+        }
     }
 }
