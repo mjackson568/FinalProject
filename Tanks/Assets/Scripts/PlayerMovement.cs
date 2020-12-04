@@ -12,28 +12,14 @@ public class PlayerMovement : MonoBehaviour
     {
         
     }
+
     // Update is called once per frame
     void Update()
     {
         float rotateTank = Input.GetAxis("Horizontal");
         float moveTank = Input.GetAxis("Vertical");
 
-<<<<<<< Updated upstream
         GetComponent<Rigidbody>().velocity = transform.forward * movespeed * moveTank;       
         transform.Rotate(Vector3.up * rotationSpeed * rotateTank * Time.deltaTime);
-=======
-        GetComponent<Rigidbody>().velocity = transform.forward * movespeed * moveTank;
-
-        transform.Rotate(Vector3.up * rotationSpeed * rotateTank * Time.deltaTime);
-
-        void OnTriggerEnter(Collider collider)
-        {
-            if (collider.gameObject.tag == "Mine")
-            {
-                Debug.Log("Mine is found");
-                Destroy(gameObject);
-            }
-        }
->>>>>>> Stashed changes
     }
 }
