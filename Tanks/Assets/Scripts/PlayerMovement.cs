@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float movespeed = 3.0f;
     public float rotationSpeed = 90.0f;
     public Rigidbody body;
+    public GameObject mine;
 
     void Start()
     {
@@ -22,14 +23,22 @@ public class PlayerMovement : MonoBehaviour
         GetComponent<Rigidbody>().velocity = transform.forward * movespeed * moveTank;       
         transform.Rotate(Vector3.up * rotationSpeed * rotateTank * Time.deltaTime);
 
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+
+            {
+                print("Mine Deployed");
+                Instantiate(mine, transform.position, Quaternion.identity);
+            }
+        }
 
         void OnTriggerEnter(Collider collider)
         {
-            if (collider.gameObject.tag == "Mine")
+            if (collider.gameObject.tag == "Mine" && collider.gameObject.GetComponent<Renderer>().material.color == Color.yellow)
             {
                 Debug.Log("Mine is found.");
-                Destroy(gameObject);
-                
+                Destroy(collider.gameObject);
+                Destroy(this.gameObject);
             }
         }
     }
